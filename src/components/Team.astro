@@ -1,0 +1,340 @@
+---
+const doctors = [
+    {
+        id: "dr-bahaka",
+        name: "Dr. Achraf Bahaka",
+        specialty: "Anesthésiste réanimateur",
+        title: "Lauréat de la Faculté de Médecine de Fès",
+        titleAr: "طبيب اختصاصي في التخدير والإنعاش<br />خريج كلية الطب بفاس",
+        link: "#",
+        photoUrl: "",
+        hasPhoto: false,
+    },
+    {
+        id: "dr-khachani",
+        name: "Dr. Khachani Mouna",
+        specialty: "Gynécologue Obstétricienne",
+        title: "Ancienne Professeure à la Faculté de Médecine de Rabat",
+        titleAr:
+            "اختصاصية في طب وجراحة أمراض النساء والولادة<br/>أستاذة سابقة بكلية الطب بالرباط",
+        link: "#",
+        photoUrl:
+            "https://www.cliniquejbellakbir.ma/wp-content/uploads/2023/11/dr-khachani.jpg", // Placeholder if no image exists in HTML, using a reliable fallback logic if needed
+        hasPhoto: false,
+    },
+    {
+        id: "dr-sellak",
+        name: "Dr. Sellak Fouad",
+        specialty: "Gynécologue Obstétricien",
+        title: "Lauréat de la Faculté de Médecine de Fès",
+        titleAr:
+            "اختصاصي في طب وجراحة أمراض النساء والولادة<br/>خريج كلية الطب بفاس – طبيب سابق بمستشفيات فرنسا",
+        link: "#",
+        photoUrl: "",
+        hasPhoto: false,
+    },
+];
+---
+
+<section class="team-section" aria-labelledby="team-title">
+    <!-- Top Quote Area (Replacing Elementor 200f405, fcd3f1e, 937d609) -->
+    <div class="mission-statement">
+        <div class="mission-container">
+            <h2 class="mission-quote">
+                "Notre mission est d’offrir à chaque patiente des soins
+                modernes, sûrs et empreints d’humanité"
+            </h2>
+            <div class="mission-author">
+                <p class="mission-author-name">Dr. Khachani Mouna</p>
+                <p class="mission-author-title">
+                    Ancienne professeure à la Faculté de médecine de Rabat
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Grid Area (Replacing Elementor 7e18f0a, 1d1e173) -->
+    <div class="team-wrapper">
+        <div class="team-container">
+            <h2 id="team-title" class="team-main-title">
+                Notre équipe médicale à la Clinique Jbel Lakbir
+            </h2>
+
+            <div class="team-grid">
+                {
+                    doctors.map((doctor) => (
+                        <div class="doctor-card" id={doctor.id}>
+                            <div class="doctor-avatar">
+                                {doctor.hasPhoto ? (
+                                    <img
+                                        src={doctor.photoUrl}
+                                        alt={`Photo de ${doctor.name}`}
+                                        class="doctor-image"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="50"
+                                        height="50"
+                                        fill="#33A9B1"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path d="M12 12c2.667 0 8 1.333 8 4v4H4v-4c0-2.667 5.333-4 8-4zm0-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                    </svg>
+                                )}
+                            </div>
+
+                            <h3 class="doctor-name">{doctor.name}</h3>
+                            <p class="doctor-specialty">{doctor.specialty}</p>
+
+                            <hr class="doctor-divider" />
+
+                            <div class="doctor-credentials">
+                                <p class="doctor-title-fr">{doctor.title}</p>
+                                <p
+                                    class="doctor-title-ar"
+                                    set:html={doctor.titleAr}
+                                />
+                            </div>
+
+                            <a href={doctor.link} class="doctor-cta">
+                                Prendre rendez-vous
+                            </a>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --team-brand: #33a9b1;
+        --team-brand-light: #e5f5f6;
+        --team-text-dark: #131d1e;
+        --team-text-gray: #555555;
+        --team-divider: #d3c5b8;
+        --team-font-heading: "Raleway", sans-serif;
+        --team-font-body: "Poppins", sans-serif;
+    }
+
+    .team-section {
+        background-color: #f8fbfe; /* Soft background common for medical sections */
+    }
+
+    /* Mission Statement Block */
+    .mission-statement {
+        background-color: var(--team-brand);
+        color: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .mission-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .mission-quote {
+        font-family: var(--team-font-heading);
+        font-size: 36px;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 1.4;
+        max-width: 900px;
+        margin: 0 auto 30px;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+    }
+
+    .mission-author {
+        font-family: var(--team-font-body);
+    }
+
+    .mission-author-name {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 5px;
+        color: #ffffff;
+    }
+
+    .mission-author-title {
+        font-size: 16px;
+        opacity: 0.9;
+        margin: 0;
+        color: #ffffff;
+    }
+
+    /* Team Grid Block */
+    .team-wrapper {
+        padding: 100px 20px;
+        background-color: #ffffff;
+    }
+
+    .team-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .team-main-title {
+        font-family: var(--team-font-heading);
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--team-text-dark);
+        margin-bottom: 60px;
+        letter-spacing: 1.5px;
+    }
+
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .doctor-card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        width: 350px;
+        padding: 40px 30px;
+        text-align: center;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .doctor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .doctor-avatar {
+        width: 130px;
+        height: 130px;
+        background: var(--team-brand-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        overflow: hidden;
+    }
+
+    .doctor-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .doctor-name {
+        font-family: var(--team-font-heading);
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--team-text-dark);
+        margin: 0 0 5px;
+    }
+
+    .doctor-specialty {
+        font-family: var(--team-font-body);
+        font-size: 16px;
+        color: var(--team-brand);
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .doctor-divider {
+        width: 50px;
+        height: 2px;
+        background-color: var(--team-divider);
+        border: none;
+        margin: 25px auto;
+    }
+
+    .doctor-credentials {
+        min-height: 140px; /* Keep cards equal height even if Arabic text varies */
+    }
+
+    .doctor-title-fr {
+        font-family: var(--team-font-body);
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--team-text-dark);
+        margin: 0 0 15px;
+        line-height: 1.5;
+    }
+
+    .doctor-title-ar {
+        font-family: var(--team-font-body);
+        font-size: 14px;
+        color: var(--team-text-gray);
+        line-height: 1.6;
+        margin: 0;
+        direction: rtl; /* Important for Arabic text rendering */
+    }
+
+    .doctor-cta {
+        display: inline-block;
+        margin-top: 25px;
+        background: transparent;
+        color: var(--team-brand);
+        border: 2px solid var(--team-brand);
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-family: var(--team-font-body);
+        font-size: 15px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .doctor-card:hover .doctor-cta {
+        background: var(--team-brand);
+        color: #ffffff;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .mission-quote {
+            font-size: 32px;
+        }
+
+        .team-main-title {
+            font-size: 36px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .mission-statement {
+            padding: 60px 20px;
+        }
+
+        .mission-quote {
+            font-size: 26px;
+        }
+
+        .team-wrapper {
+            padding: 60px 20px;
+        }
+
+        .team-main-title {
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .doctor-card {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .doctor-credentials {
+            min-height: auto;
+        }
+    }
+</style>

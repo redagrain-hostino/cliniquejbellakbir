@@ -1,0 +1,260 @@
+---
+const services = [
+    {
+        title: "Gynécologie",
+        description:
+            "Toutes le problématiques que peut rencontrer une femme au cours de sa vie trouvent des réponses auprès des spécialistes de la Clinique Jbel Kebir.",
+        link: "/gynecologie/",
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/10/gynecologie-tanger.jpg",
+        alt: "Service de gynécologie à Tanger",
+    },
+    {
+        title: "Obstétrique",
+        description:
+            "Un accompagnement complet tout au long de la grossesse, de la conception à l’accouchement, dans un cadre attentif et rassurant.",
+        link: "/obstetrique/",
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/10/obstetrique-tanger.jpg",
+        alt: "Service Obstétrique à Tanger",
+    },
+    {
+        title: "Cancérologie",
+        description:
+            "Service spécialisé dans la prévention, le diagnostic et le traitement des cancers féminins, avec une prise en charge humaine et multidisciplinaire.",
+        link: "/cancerologie/",
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/10/cancerologie-tanger.jpg",
+        alt: "Cancerologie Gynécologique à Tanger",
+    },
+    {
+        title: "Chirurgie",
+        description:
+            "Un service dédié aux interventions chirurgicales féminines, réalisé avec des techniques et technologies modernes et sécurisées, garantissant précision et confort.",
+        link: "/chirurgie/",
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/10/chirurgie-gynecologue-tanger.jpg",
+        alt: "Chirurgie Gynécologique Tanger",
+    },
+];
+---
+
+<section class="services-section" aria-labelledby="services-title">
+    <div class="services-container">
+        <div class="services-header">
+            <h2 id="services-title" class="services-main-title">
+                Découvrez les services proposés par la Clinique Jbel Kebir
+            </h2>
+        </div>
+
+        <div class="services-grid">
+            {
+                services.map((service) => (
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <img
+                                src={service.image}
+                                alt={service.alt}
+                                width="342"
+                                height="342"
+                                loading="lazy"
+                                decoding="async"
+                                class="service-icon"
+                            />
+                        </div>
+                        <h3 class="service-title">{service.title}</h3>
+                        <p class="service-desc">{service.description}</p>
+                        <a href={service.link} class="service-link">
+                            Lire la suite
+                            <svg
+                                class="service-link-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                                width="14"
+                                height="14"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --services-title-color: #131d1e;
+        --services-text-color: #022545;
+        --services-font-heading: "Raleway", sans-serif;
+        --services-font-body: "Poppins", sans-serif;
+    }
+
+    .services-section {
+        background-color: #ffffff;
+        padding: 0 0 120px;
+    }
+
+    .services-container {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Header / Title */
+    .services-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 50px;
+        padding: 0 20px;
+    }
+
+    .services-main-title {
+        font-family: var(--services-font-heading);
+        font-size: 51px;
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: 2.8px;
+        color: var(--services-title-color);
+        margin: 0;
+    }
+
+    /* Grid Layout */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+        column-gap: 40px;
+    }
+
+    /* Individual Service Card */
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 50px;
+    }
+
+    .service-icon-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .service-icon {
+        width: 22%;
+        min-width: 120px;
+        height: auto;
+        border-radius: 50%; /* Elementor images look circular mostly, applying gentle border radius if not already circular in source. It is just an image tag right now but often these are icons */
+        /* Given they are squares "342x342" it's good to keep them proportional. */
+    }
+
+    .service-title {
+        font-family: var(--services-font-heading);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.65;
+        letter-spacing: 2.8px;
+        color: var(--services-title-color);
+        margin: 0 0 15px;
+    }
+
+    .service-desc {
+        font-family: var(--services-font-body);
+        font-size: 16px;
+        color: var(--services-text-color);
+        line-height: 1.6;
+        margin: 0 0 20px;
+    }
+
+    /* Button / Link */
+    .service-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-family: var(--services-font-body);
+        font-size: 16px;
+        font-weight: 600;
+        color: #33a9b1;
+        text-decoration: none;
+        padding: 12px 32px;
+        background-color: transparent;
+        border: 2px solid #33a9b1;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .service-link-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .service-link:hover {
+        background-color: #33a9b1;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(51, 169, 177, 0.25);
+    }
+
+    .service-link:hover .service-link-icon {
+        transform: translateX(4px);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .services-header {
+            padding: 0;
+        }
+
+        .services-main-title {
+            font-size: 50px;
+            line-height: 1.02;
+            letter-spacing: -2.4px;
+        }
+
+        .service-card {
+            padding: 0 20px;
+        }
+
+        .service-icon {
+            width: 17%;
+            min-width: 100px;
+        }
+
+        .service-title {
+            font-size: 31px;
+            line-height: 1.4;
+            letter-spacing: -2px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .services-section {
+            padding: 0 0 80px;
+        }
+
+        .services-main-title {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+            row-gap: 60px;
+        }
+
+        .service-card {
+            padding: 0 10px;
+        }
+
+        .service-icon {
+            width: 35%;
+            min-width: 130px;
+        }
+
+        .service-title {
+            font-size: 31px;
+        }
+    }
+</style>

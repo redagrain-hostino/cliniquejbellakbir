@@ -1,0 +1,738 @@
+---
+const reviews = [
+    {
+        name: "Buchra GDM",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWe7I0ku36GfaolbNq3kGTUwZCH8jz4HqSCbUcZqj13qnyzngov=w80-h80-c-rp-mo-br100",
+        rating: 5,
+        text: "Quiero expresar mi más sincero agradecimiento para la Dra. Mouna y todo el equipo de la clínica jbel lakbir. Mi experiencia cubrió todo el proceso de mi embarazo, desde el principio hasta el día del parto, y fue absolutamente excepcional. La Dra. Mouna es una profesional increíble, dedicada y muy atenta.",
+    },
+    {
+        name: "Lina Amraoui",
+        avatar: "https://lh3.googleusercontent.com/a/ACg8ocKfa7pV2Zmiyy6UMKGL64RatGnrCUe1xSx0MiGCBfMG67lF5Q=w80-h80-c-rp-mo-br100",
+        rating: 5,
+        text: "Un grand merci au Dr. Sellak Fouad pour sa compétence et son professionnalisme. Il est à l'écoute, rassurant et prend le temps d'expliquer et de rassurer ses patientes. Je le recommande sans hésitation !",
+    },
+    {
+        name: "Wiam Elmk",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUtyUAvczyBfn-ApUFCgNI-pSzPpEDPUf5WoMFhrWEmkyH9jwF5=w80-h80-c-rp-mo-br100",
+        rating: 5,
+        text: "Une clinique exceptionnelle, avec un personnel chaleureux et professionnel. Je me suis sentie en totale confiance dès la première consultation. L'équipe médicale est à l'écoute et très attentionnée. Je recommande vivement !",
+    },
+    {
+        name: "Salma Mikou",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjV1SdOU5EzCp7LyXO60B2WDaFKcitNjAyr-ykzEbKiMQjxX621juw=w80-h80-c-rp-mo-br100",
+        rating: 5,
+        text: "Excellent accueil, personnel très professionnel et bienveillant. La clinique est propre et bien équipée. Le Dr et son équipe ont été formidables tout au long de mon suivi. Je suis très satisfaite de mes soins.",
+    },
+    {
+        name: "RANIA LOUKILI",
+        avatar: "https://lh3.googleusercontent.com/a/ACg8ocI24Vyo0MxIq4yx-SamZlUaLVXmlwz4iQGcAoN4fY-GZpOfRw=w80-h80-c-rp-mo-br100",
+        rating: 5,
+        text: "Une expérience très positive à la Clinique Jbel Lakbir. Le personnel est accueillant, les médecins sont compétents et à l'écoute. Les infrastructures sont modernes et propres. Je recommande cette clinique à toutes les femmes de Tanger.",
+    },
+];
+---
+
+<section class="testimonials-section" aria-labelledby="testimonials-title">
+    <div class="testimonials-container">
+        <!-- Header -->
+        <div class="testimonials-header">
+            <span class="testimonials-subtitle">Avis Patients</span>
+            <h2 id="testimonials-title" class="testimonials-title">
+                Ce que nos patientes <span class="highlight"
+                    >disent de nous</span
+                >
+            </h2>
+            <p class="testimonials-desc">
+                La confiance de nos patientes est notre plus grande fierté.
+                Découvrez leurs expériences vécues à la Clinique Jbel Lakbir.
+            </p>
+            <!-- Google Rating Badge -->
+            <div class="google-badge">
+                <svg
+                    viewBox="0 0 24 24"
+                    class="google-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                        fill="#4285F4"></path>
+                    <path
+                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                        fill="#34A853"></path>
+                    <path
+                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                        fill="#FBBC05"></path>
+                    <path
+                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                        fill="#EA4335"></path>
+                </svg>
+                <div class="google-badge-info">
+                    <span class="google-rating-number">5.0</span>
+                    <div class="google-stars">
+                        {
+                            Array(5)
+                                .fill(null)
+                                .map(() => (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        class="star-filled"
+                                    >
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                                            fill="#FBBC05"
+                                            stroke="none"
+                                        />
+                                    </svg>
+                                ))
+                        }
+                    </div>
+                    <span class="google-review-count">Basé sur Google</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider -->
+        <div class="slider-wrapper">
+            <!-- Prev Button -->
+            <button
+                class="slider-btn slider-prev"
+                id="slider-prev"
+                aria-label="Avis précédent"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Track -->
+            <div class="slider-viewport" id="slider-viewport">
+                <div class="slider-track" id="slider-track">
+                    {
+                        reviews.map((review) => (
+                            <div class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-avatar-wrap">
+                                        <img
+                                            src={review.avatar}
+                                            alt={`${review.name} profile picture`}
+                                            class="review-avatar"
+                                            width="48"
+                                            height="48"
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer"
+                                            onerror={`this.style.display='none';this.nextElementSibling.style.display='flex'`}
+                                        />
+                                        <div
+                                            class="review-avatar-fallback"
+                                            style="display:none"
+                                        >
+                                            {review.name
+                                                .charAt(0)
+                                                .toUpperCase()}
+                                        </div>
+                                    </div>
+                                    <div class="review-meta">
+                                        <span class="review-name">
+                                            {review.name}
+                                        </span>
+                                        <div class="review-stars">
+                                            {Array(review.rating)
+                                                .fill(null)
+                                                .map(() => (
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24"
+                                                        class="star-icon"
+                                                    >
+                                                        <path
+                                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                                                            fill="#FBBC05"
+                                                            stroke="none"
+                                                        />
+                                                    </svg>
+                                                ))}
+                                        </div>
+                                    </div>
+                                    <div class="review-platform">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            class="review-google-icon"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4"
+                                            />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853"
+                                            />
+                                            <path
+                                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                                fill="#FBBC05"
+                                            />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                                fill="#EA4335"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="review-quote-icon">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                                            fill="currentColor"
+                                        />
+                                        <path
+                                            d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="review-text">{review.text}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button
+                class="slider-btn slider-next"
+                id="slider-next"
+                aria-label="Avis suivant"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="slider-dots">
+            {
+                reviews.map((_, i) => (
+                    <button
+                        class={`dot ${i === 0 ? "active" : ""}`}
+                        data-index={i}
+                        aria-label={`Avis ${i + 1}`}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const track = document.getElementById("slider-track") as HTMLElement;
+        const viewport = document.getElementById(
+            "slider-viewport",
+        ) as HTMLElement;
+        const prevBtn = document.getElementById(
+            "slider-prev",
+        ) as HTMLButtonElement;
+        const nextBtn = document.getElementById(
+            "slider-next",
+        ) as HTMLButtonElement;
+        const dotsContainer = document.getElementById(
+            "slider-dots",
+        ) as HTMLElement;
+        const dots = Array.from(
+            dotsContainer.querySelectorAll(".dot"),
+        ) as HTMLButtonElement[];
+        const cards = Array.from(
+            track.querySelectorAll(".review-card"),
+        ) as HTMLElement[];
+
+        let current = 0;
+        let autoplayTimer: ReturnType<typeof setInterval>;
+
+        function getVisibleCount(): number {
+            const w = viewport.offsetWidth;
+            if (w >= 1024) return 3;
+            if (w >= 640) return 2;
+            return 1;
+        }
+
+        function getCardWidth(): number {
+            const gap = 24;
+            const visible = getVisibleCount();
+            return (viewport.offsetWidth - gap * (visible - 1)) / visible;
+        }
+
+        function goTo(index: number) {
+            const total = cards.length;
+            const visible = getVisibleCount();
+            const max = total - visible;
+            current = Math.max(0, Math.min(index, max));
+            const cardW = getCardWidth();
+            const offset = current * (cardW + 24);
+            track.style.transform = `translateX(-${offset}px)`;
+            dots.forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        function next() {
+            goTo(
+                current + 1 >= cards.length - getVisibleCount() + 1
+                    ? 0
+                    : current + 1,
+            );
+        }
+        function prev() {
+            goTo(
+                current - 1 < 0
+                    ? cards.length - getVisibleCount()
+                    : current - 1,
+            );
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(next, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayTimer);
+        }
+
+        // Set card widths
+        function updateLayout() {
+            const cardW = getCardWidth();
+            cards.forEach((c) => {
+                c.style.minWidth = `${cardW}px`;
+                c.style.maxWidth = `${cardW}px`;
+            });
+            goTo(current);
+        }
+
+        nextBtn.addEventListener("click", () => {
+            next();
+            startAutoplay();
+        });
+        prevBtn.addEventListener("click", () => {
+            prev();
+            startAutoplay();
+        });
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                goTo(i);
+                startAutoplay();
+            });
+        });
+
+        window.addEventListener("resize", updateLayout);
+
+        updateLayout();
+        startAutoplay();
+    })();
+</script>
+
+<style>
+    :root {
+        --t-bg: #ffffff;
+        --t-brand: #33a9b1;
+        --t-card-bg: #f8fbfb;
+        --t-title-color: #1a202c;
+        --t-text-dark: #2d3748;
+        --t-text-muted: #718096;
+        --t-font-heading: "Raleway", sans-serif;
+        --t-font-body: "Poppins", sans-serif;
+    }
+
+    .testimonials-section {
+        background-color: var(--t-bg);
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .testimonials-section::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(51, 169, 177, 0.07) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+
+    .testimonials-section::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(51, 169, 177, 0.05) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+
+    .testimonials-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ── Header ── */
+    .testimonials-header {
+        text-align: center;
+        margin-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .testimonials-subtitle {
+        font-family: var(--t-font-body);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--t-brand);
+        background-color: rgba(51, 169, 177, 0.12);
+        padding: 6px 18px;
+        border-radius: 50px;
+    }
+
+    .testimonials-title {
+        font-family: var(--t-font-heading);
+        font-size: 44px;
+        font-weight: 800;
+        color: var(--t-title-color);
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .testimonials-title .highlight {
+        color: var(--t-brand);
+    }
+
+    .testimonials-desc {
+        font-family: var(--t-font-body);
+        font-size: 17px;
+        color: var(--t-text-muted);
+        max-width: 580px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ── Google Badge ── */
+    .google-badge {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #f0f9fa;
+        border: 1px solid rgba(51, 169, 177, 0.2);
+        border-radius: 50px;
+        padding: 10px 24px;
+        margin-top: 6px;
+    }
+
+    .google-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
+    .google-badge-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .google-rating-number {
+        font-family: var(--t-font-heading);
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--t-title-color);
+    }
+
+    .google-stars {
+        display: flex;
+        gap: 2px;
+    }
+
+    .star-filled {
+        width: 16px;
+        height: 16px;
+    }
+
+    .google-review-count {
+        font-family: var(--t-font-body);
+        font-size: 13px;
+        color: var(--t-text-muted);
+    }
+
+    /* ── Slider Layout ── */
+    .slider-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .slider-viewport {
+        overflow: hidden;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .slider-track {
+        display: flex;
+        gap: 24px;
+        transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+        will-change: transform;
+    }
+
+    /* ── Review Card ── */
+    .review-card {
+        background: var(--t-card-bg);
+        border-radius: 20px;
+        padding: 32px;
+        border: 1px solid rgba(51, 169, 177, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(51, 169, 177, 0.3);
+        box-shadow: 0 12px 40px rgba(51, 169, 177, 0.1);
+    }
+
+    /* ── Slider Buttons ── */
+    .slider-btn {
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid rgba(51, 169, 177, 0.25);
+        background: #ffffff;
+        color: var(--t-brand);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+            background 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .slider-btn:hover {
+        background: var(--t-brand);
+        border-color: var(--t-brand);
+        color: #ffffff;
+        box-shadow: 0 4px 20px rgba(51, 169, 177, 0.25);
+    }
+
+    .slider-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* ── Dots ── */
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 36px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(51, 169, 177, 0.25);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition:
+            background 0.3s ease,
+            transform 0.3s ease,
+            width 0.3s ease;
+    }
+
+    .dot.active {
+        background: var(--t-brand);
+        width: 24px;
+        border-radius: 4px;
+    }
+
+    /* ── Card Internals ── */
+    .review-card-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .review-avatar-wrap {
+        flex-shrink: 0;
+    }
+
+    .review-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(51, 169, 177, 0.3);
+        display: block;
+    }
+
+    .review-avatar-fallback {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--t-brand);
+        color: #ffffff;
+        font-family: var(--t-font-heading);
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border: 2px solid rgba(51, 169, 177, 0.3);
+    }
+
+    .review-meta {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .review-name {
+        font-family: var(--t-font-body);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--t-title-color);
+    }
+
+    .review-stars {
+        display: flex;
+        gap: 2px;
+    }
+
+    .star-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .review-platform {
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .review-google-icon {
+        width: 20px;
+        height: 20px;
+        opacity: 0.8;
+    }
+
+    .review-quote-icon {
+        color: var(--t-brand);
+        opacity: 0.25;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    .review-quote-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .review-text {
+        font-family: var(--t-font-body);
+        font-size: 15px;
+        color: var(--t-text-muted);
+        line-height: 1.75;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+        .testimonials-title {
+            font-size: 38px;
+        }
+
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .testimonials-title {
+            font-size: 30px;
+        }
+
+        .testimonials-desc {
+            font-size: 15px;
+        }
+
+        .google-badge {
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .slider-btn {
+            display: none;
+        }
+    }
+</style>

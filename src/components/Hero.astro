@@ -1,0 +1,161 @@
+---
+
+---
+
+<section class="hero-section" aria-label="Bannière d'accueil">
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-subtitle">Clinique de Gynécologie à Tanger</h1>
+            <h2 class="hero-title">
+                Clinique de santé des femmes et grossesse<br />à Tanger
+            </h2>
+            <a href="/contact" class="hero-cta">Prendre rendez-vous</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --hero-brand: #33a9b1;
+        --hero-font-main: "Raleway", sans-serif;
+        --hero-font-btn: "Poppins", sans-serif;
+    }
+
+    .hero-section {
+        position: relative;
+        padding: 120px 0;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        background-color: var(--hero-brand);
+        color: #ffffff;
+        overflow: hidden;
+    }
+
+    /* Background image with overlay */
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: url("https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/10/slide-jbel.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* The actual color overlay over the image */
+    .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--hero-brand);
+        opacity: 0.92; /* Semi-transparent brand color overlaying the image */
+    }
+
+    .hero-container {
+        position: relative;
+        z-index: 2; /* Above the background */
+        max-width: 1400px;
+        width: 100%;
+        margin-inline: auto;
+        padding-inline: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 750px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .hero-subtitle {
+        font-family: var(--hero-font-main);
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        margin: 0;
+        color: #ffffff;
+    }
+
+    .hero-title {
+        font-family: var(--hero-font-main);
+        font-size: 67px;
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: 2.8px;
+        margin: 0;
+        color: #ffffff;
+    }
+
+    .hero-cta {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        padding: 15px 40px;
+        background-color: var(--hero-brand);
+        color: #ffffff;
+        font-family: var(--hero-font-btn);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 7px;
+        border: 2px solid #ffffff; /* Add white border to make it pop against the teal background */
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            transform 0.2s ease;
+    }
+
+    .hero-cta:hover {
+        background-color: #ffffff;
+        color: var(--hero-brand);
+        transform: translateY(-2px);
+    }
+
+    .hero-cta:active {
+        transform: translateY(0);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .hero-section {
+            padding: 100px 0;
+        }
+
+        .hero-title {
+            font-size: 50px;
+            line-height: 1.1;
+            letter-spacing: -2.4px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 47px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            letter-spacing: -0.7px;
+        }
+    }
+</style>

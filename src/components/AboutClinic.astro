@@ -1,0 +1,293 @@
+---
+
+---
+
+<section class="about-section" aria-labelledby="about-title">
+    <div class="about-container">
+        <!-- Header Section -->
+        <div class="about-header">
+            <span class="about-subtitle">À Propos De Nous</span>
+            <h2 id="about-title" class="about-title">
+                Clinique Jbel Lakbir Tanger : <br />
+                <span class="highlight">un espace dédié à la santé</span> et au bien-être
+                des femmes
+            </h2>
+            <div class="about-divider"></div>
+        </div>
+
+        <div class="about-content-card">
+            <p class="about-lead">
+                À Tanger, la Clinique Jbel Lakbir est bien plus qu’un simple
+                établissement de santé : c’est un lieu
+                <a
+                    href="https://fr.wikipedia.org/wiki/Gyn%C3%A9cologie"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    dédié aux femmes</a
+                >, conçu pour leur bien-être et leur épanouissement à chaque
+                étape de la vie. Chaque espace, chaque détail a été imaginé pour
+                offrir confort, écoute et sérénité, dans une atmosphère
+                chaleureuse et apaisante.
+            </p>
+
+            <div class="about-paragraphs">
+                <p>
+                    Alliant expertise médicale, équipements de pointe et
+                    approche humaine, nos équipes s’engagent à offrir des soins
+                    personnalisés où la confiance et l’excellence sont au cœur
+                    de chaque démarche.
+                </p>
+                <p>
+                    De la prévention aux traitements les plus spécialisés, la
+                    Clinique Jbel Lakbir met tout en œuvre pour vous accompagner
+                    avec bienveillance, dans une expérience unique, où la santé
+                    féminine est célébrée comme une véritable priorité.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --about-bg: #f9fbfc;
+        --about-brand: #33a9b1;
+        --about-title-color: #1a202c;
+        --about-text-color: #4a5568;
+        --about-font-heading: "Raleway", sans-serif;
+        --about-font-body: "Poppins", sans-serif;
+    }
+
+    .about-section {
+        background-color: var(--about-bg);
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Subtle background circle patterns */
+    .about-section::before,
+    .about-section::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(51, 169, 177, 0.05) 0%,
+            rgba(51, 169, 177, 0) 70%
+        );
+        z-index: 0;
+    }
+
+    .about-section::before {
+        top: -150px;
+        left: -150px;
+        width: 600px;
+        height: 600px;
+    }
+
+    .about-section::after {
+        bottom: -150px;
+        right: -150px;
+        width: 500px;
+        height: 500px;
+    }
+
+    .about-container {
+        max-width: 1000px; /* Constrained width for optimal reading line length */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-header {
+        text-align: center;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-subtitle {
+        font-family: var(--about-font-body);
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--about-brand);
+        display: inline-block;
+        margin-bottom: 15px;
+        background-color: rgba(51, 169, 177, 0.1);
+        padding: 6px 16px;
+        border-radius: 50px;
+    }
+
+    .about-title {
+        font-family: var(--about-font-heading);
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--about-title-color);
+        margin: 0 0 30px;
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+    }
+
+    .about-title .highlight {
+        color: var(--about-brand);
+    }
+
+    .about-divider {
+        width: 60px;
+        height: 3px;
+        background: var(--about-brand);
+        border-radius: 2px;
+    }
+
+    .about-content-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.02),
+            0 12px 40px rgba(51, 169, 177, 0.08),
+            0 40px 80px rgba(0, 0, 0, 0.04);
+        padding: 60px 70px;
+        text-align: center;
+        border: 1px solid rgba(51, 169, 177, 0.12);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    /* Teal gradient top accent bar */
+    .about-content-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #33a9b1, rgba(51, 169, 177, 0.3));
+    }
+
+    /* Subtle corner decoration */
+    .about-content-card::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(51, 169, 177, 0.05) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+
+    .about-lead {
+        font-family: var(--about-font-body);
+        font-size: 20px;
+        color: var(--about-title-color);
+        line-height: 1.8;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .about-lead a {
+        color: var(--about-brand);
+        text-decoration: none;
+        position: relative;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .about-lead a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0px;
+        left: 0;
+        background-color: var(--about-brand);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+
+    .about-lead a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .about-separator {
+        margin: 35px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-icon {
+        color: var(--about-brand);
+        opacity: 0.5;
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-paragraphs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-paragraphs p {
+        font-family: var(--about-font-body);
+        font-size: 16px;
+        color: var(--about-text-color);
+        line-height: 1.8;
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .about-title {
+            font-size: 36px;
+        }
+
+        .about-content-card {
+            padding: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-title {
+            font-size: 30px;
+        }
+
+        .about-content-card {
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .about-lead {
+            font-size: 18px;
+        }
+
+        .about-paragraphs p {
+            font-size: 15px;
+        }
+    }
+</style>

@@ -1,0 +1,438 @@
+﻿---
+
+---
+
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="contact-container">
+        <!-- Text & Info Column -->
+        <div class="contact-info">
+            <span class="contact-subtitle">Contact & Réservation</span>
+            <h2 id="contact-title" class="contact-title">
+                Prendre<br />
+                <span class="highlight">rendez-vous</span>
+            </h2>
+            <p class="contact-desc">
+                Une fois le formulaire rempli, un membre de l'équipe de la
+                Clinique Jbel Lakbir vous contactera pour confirmer le jour et
+                l'heure de votre rendez-vous.
+            </p>
+
+            <a href="tel:+212539949094" class="contact-phone-card">
+                <div class="phone-icon-box">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                    </svg>
+                </div>
+                <div class="phone-text">
+                    <span class="phone-label">Appelez-nous directement</span>
+                    <span class="phone-number">+212 5399-49094</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Form Column -->
+        <form
+            class="clinique-form"
+            action="#"
+            method="POST"
+            id="contact-form"
+            novalidate
+        >
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Votre nom"
+                        autocomplete="name"
+                    />
+
+                    <label for="email"
+                        >Adresse email <span class="required-star">*</span
+                        ></label
+                    >
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="votre@email.com"
+                        autocomplete="email"
+                        required
+                    />
+                </div>
+
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+212 6XX XX XX XX"
+                    autocomplete="tel"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="message"
+                    >Message <span class="required-star">*</span></label
+                >
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Comment pouvons-nous vous aider ?"
+                    required></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn"
+                aria-label="Envoyer le formulaire"
+            >
+                <span>Envoyer ma demande</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+    </div>
+</section>
+
+<style>
+    .contact-section {
+        background-color: #33a9b1;
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+    }
+
+    /* Subtle ambient light shapes */
+    .contact-section::before {
+        content: "";
+        position: absolute;
+        top: -180px;
+        left: -180px;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.12) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+    .contact-section::after {
+        content: "";
+        position: absolute;
+        bottom: -200px;
+        right: -120px;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+
+    /* ── Layout ── */
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* ── Left column ── */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .contact-subtitle {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+    }
+
+    .contact-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 50px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.12;
+        margin: 0 0 22px 0;
+    }
+
+    .contact-title .highlight {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .contact-desc {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.75;
+        margin: 0 0 40px 0;
+        max-width: 420px;
+    }
+
+    /* Phone card */
+    .contact-phone-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        padding: 20px 28px;
+        border-radius: 18px;
+        text-decoration: none;
+        transition:
+            background 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .contact-phone-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .phone-icon-box {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #fff;
+        color: #33a9b1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .phone-icon-box svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .phone-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .phone-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+
+    .phone-number {
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.3px;
+    }
+
+    /* ── Form ── */
+    .clinique-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.4px;
+    }
+
+    .required-star {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 14px;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        box-sizing: border-box;
+        transition:
+            border-color 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input:hover,
+    .form-group textarea:hover {
+        border-color: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.22);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 130px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: #ffffff;
+        color: #33a9b1;
+        border: none;
+        border-radius: 14px;
+        padding: 18px 28px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+            background 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        margin-top: 6px;
+        width: 100%;
+        letter-spacing: 0.3px;
+    }
+
+    .submit-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+    .submit-btn svg {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .submit-btn:hover svg {
+        transform: translate(3px, -3px);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+            gap: 52px;
+        }
+        .contact-info {
+            align-items: center;
+            text-align: center;
+        }
+        .contact-desc {
+            max-width: 580px;
+        }
+        .contact-title {
+            font-size: 42px;
+        }
+        .contact-title br {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .contact-section {
+            padding: 80px 0;
+        }
+        .contact-container {
+            padding: 0 20px;
+        }
+        .contact-title {
+            font-size: 34px;
+        }
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+        .contact-phone-card {
+            padding: 16px 20px;
+            width: 100%;
+        }
+        .phone-number {
+            font-size: 19px;
+        }
+    }
+</style>
