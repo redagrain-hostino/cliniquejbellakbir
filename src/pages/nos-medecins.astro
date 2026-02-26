@@ -1,0 +1,413 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactSection from "../components/ContactSection.astro";
+
+const docs = [
+    {
+        name: "Dr. Khachani Mouna",
+        specialty: "Gynécologue Obstétricienne",
+        paragraphs: [
+            "Dr Khachani Mouna, Gynécologue-Obstétricienne, met son expertise au service de la santé et du bien-être des femmes. Spécialisée dans le suivi gynécologique et obstétrical, elle assure une prise en charge complète allant de la consultation médicale aux interventions chirurgicales, en passant par le suivi de grossesse et la gestion des grossesses à haut risque.",
+            `Son approche repose sur l'écoute, la précision diagnostique et l'accompagnement personnalisé. Ancienne Professeure à la <strong>Faculté de Médecine de Rabat</strong>, le Dr Khachani a consacré de nombreuses années à la formation de futurs médecins ainsi qu'à la recherche scientifique. Cette expérience académique lui confère une maîtrise approfondie des avancées médicales et des bonnes pratiques internationales dans le domaine de la gynécologie et de l'obstétrique.`,
+            `Au sein de la clinique, elle met un point d'honneur à instaurer une relation de confiance avec ses patientes. Chaque femme bénéficie d'une prise en charge humaine, bienveillante et adaptée à ses besoins, dans un environnement médical sécurisé et moderne. Sa priorité : offrir des soins de qualité et accompagner chaque patiente à chaque étape de sa vie.`,
+        ],
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/11/dr-mouna.jpg",
+    },
+    {
+        name: "Dr. Sellak Fouad",
+        specialty: "Gynécologue Obstétricien",
+        paragraphs: [
+            "Dr Sellak Fouad, Gynécologue-Obstétricien, accompagne les patientes dans toutes les étapes de leur santé gynécologique et reproductive. Il assure un suivi complet incluant les consultations gynécologiques, le dépistage, la prise en charge des pathologies de l'appareil génital féminin ainsi que le suivi de grossesse et la gestion des accouchements.",
+            "À l'écoute, précis et attentif aux besoins de ses patientes, il met un point d'honneur à offrir des soins personnalisés et rassurants. Fort d'une solide expérience en gynécologie-obstétrique et en chirurgie gynécologique, Dr Sellak Fouad intervient également dans le cadre de chirurgies mini-invasives et de traitements adaptés aux différentes pathologies gynécologiques.",
+            "Sa maîtrise des techniques modernes lui permet d'allier efficacité des interventions et récupération rapide pour les patientes. Au sein de la clinique, il privilégie une approche humaine et bienveillante. Chaque patiente bénéficie d'un accompagnement clair et détaillé, dans un environnement sécurisé et équipé des meilleures technologies. Sa priorité : garantir un suivi médical de qualité et un accompagnement complet, que ce soit pour une consultation de routine, un projet de maternité ou une intervention chirurgicale.",
+        ],
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/11/dr.jpg",
+    },
+    {
+        name: "Dr. Achraf Bahaka",
+        specialty: "Anesthésiste réanimateur",
+        paragraphs: [
+            "Dr Achraf Bahaka, Anesthésiste-Réanimateur, accompagne les patients tout au long de leur parcours chirurgical. Il réalise l'évaluation pré-anesthésique, choisit la technique adaptée (anesthésie générale, loco-régionale ou sédation) et garantit le confort ainsi que la sécurité du patient pendant toute l'intervention.",
+            "Avec une approche rassurante et pédagogique, il prend le temps d'expliquer chaque étape afin de réduire l'anxiété liée à l'acte opératoire.",
+            "Lauréat de la Faculté de Médecine de Fès, Dr Bahaka dispose d'une solide formation académique et pratique en anesthésie et réanimation. Son expertise en soins intensifs lui permet de prendre en charge les situations complexes nécessitant une surveillance rapprochée ou un soutien des fonctions vitales.",
+            "Il assure également une gestion optimale de la douleur et un suivi attentif en post-opératoire afin de favoriser une récupération rapide et confortable.",
+        ],
+        image: "https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/11/dr.jpg",
+    },
+];
+---
+
+<Layout title="Nos médecins | Clinique Jbel Lakbir">
+    <main class="meds-page">
+        <!-- Hero Section -->
+        <section class="meds-hero">
+            <div class="meds-hero__bg-glow meds-hero__bg-glow--right"></div>
+            <div class="meds-hero__bg-glow meds-hero__bg-glow--left"></div>
+
+            <div class="meds-hero__inner">
+                <div class="meds-hero__badge">
+                    <span class="meds-hero__badge-dot"></span>
+                    Équipe Médicale
+                </div>
+
+                <h1 class="meds-hero__title">
+                    Nos <span class="meds-hero__title-accent">Médecins</span>
+                </h1>
+
+                <p class="meds-hero__subtitle">
+                    Découvrez l'équipe d'experts de la Clinique Jbel Lakbir,
+                    engagée à vous offrir des soins de la plus haute qualité,
+                    alliant compétence, bienveillance et innovation.
+                </p>
+
+                <div class="meds-hero__cta-wrap">
+                    <a href="/contact" class="meds-hero__cta">
+                        <span>Prendre rendez-vous</span>
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+                        >
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors List -->
+        <section class="meds-list">
+            <div class="meds-list__inner">
+                {
+                    docs.map((doc, idx) => (
+                        <div
+                            class={`meds-doc ${idx % 2 !== 0 ? "meds-doc--reverse" : ""}`}
+                        >
+                            <div class="meds-doc__image-wrap">
+                                <div class="meds-doc__image-bg" />
+                                <img
+                                    src={doc.image}
+                                    alt={doc.name}
+                                    class="meds-doc__image"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="meds-doc__content">
+                                <h2 class="meds-doc__name">{doc.name}</h2>
+                                <h3 class="meds-doc__specialty">
+                                    {doc.specialty}
+                                </h3>
+                                <div class="meds-doc__text">
+                                    {doc.paragraphs.map((p) => (
+                                        <p set:html={p} />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+
+        <ContactSection />
+    </main>
+</Layout>
+
+<style>
+    /* ========================================
+       VARIABLES & TOKENS
+       ======================================== */
+    :root {
+        --meds-brand: #009b9f;
+        --meds-brand-dark: #007679;
+        --meds-brand-light: #e6f5f5;
+        --meds-accent: #535353;
+
+        --meds-text-primary: #1e293b;
+        --meds-text-secondary: #475569;
+        --meds-text-muted: #64748b;
+
+        --meds-white: #ffffff;
+        --meds-bg-alt: #f8fafc;
+        --meds-border: #e2e8f0;
+
+        --meds-radius-sm: 8px;
+        --meds-radius-md: 16px;
+        --meds-radius-lg: 24px;
+        --meds-radius-full: 9999px;
+
+        --meds-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        --meds-shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.05);
+        --meds-shadow-lg: 0 20px 40px -5px rgba(0, 155, 159, 0.1);
+
+        --meds-font-heading: "Playfair Display", "Georgia", serif;
+        --meds-font-body: "Inter", "system-ui", sans-serif;
+    }
+
+    /* ========================================
+       GLOBAL & RESET
+       ======================================== */
+    .meds-page {
+        font-family: var(--meds-font-body);
+        color: var(--meds-text-primary);
+        line-height: 1.6;
+        background-color: var(--meds-white);
+        overflow-x: hidden;
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+    .meds-hero {
+        position: relative;
+        padding: 120px 24px 80px;
+        background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            var(--meds-brand-dark) 100%
+        );
+        color: var(--meds-white);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .meds-hero__bg-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .meds-hero__bg-glow--right {
+        top: -200px;
+        right: -200px;
+        background: var(--meds-brand);
+    }
+    .meds-hero__bg-glow--left {
+        bottom: -200px;
+        left: -200px;
+        background: var(--meds-white);
+    }
+
+    .meds-hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meds-hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        padding: 8px 16px;
+        border-radius: var(--meds-radius-full);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .meds-hero__badge-dot {
+        width: 8px;
+        height: 8px;
+        background: #10b981;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #10b981;
+    }
+
+    .meds-hero__title {
+        font-family: var(--meds-font-heading);
+        font-size: clamp(40px, 6vw, 64px);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 24px 0;
+        color: var(--meds-white);
+    }
+    .meds-hero__title-accent {
+        font-style: italic;
+    }
+
+    .meds-hero__subtitle {
+        font-size: clamp(16px, 2vw, 20px);
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 0 40px 0;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    .meds-hero__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--meds-white);
+        color: var(--meds-brand-dark);
+        padding: 16px 32px;
+        border-radius: var(--meds-radius-full);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--meds-shadow-md);
+    }
+    .meds-hero__cta:hover {
+        transform: translateY(-2px);
+        background: #e2e8f0;
+        color: var(--meds-brand-dark);
+        box-shadow: var(--meds-shadow-lg);
+    }
+
+    /* ========================================
+       DOCTORS LIST
+       ======================================== */
+    .meds-list {
+        padding: 100px 24px;
+        background-color: var(--meds-bg-alt);
+    }
+
+    .meds-list__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .meds-doc {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        background: var(--meds-white);
+        padding: 40px;
+        border-radius: var(--meds-radius-lg);
+        box-shadow: var(--meds-shadow-md);
+    }
+
+    @media (min-width: 768px) {
+        .meds-doc {
+            flex-direction: row;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .meds-doc--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .meds-doc__image-wrap {
+        flex: 0 0 100%;
+        max-width: 400px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .meds-doc__image-wrap {
+            flex: 0 0 35%;
+        }
+    }
+
+    .meds-doc__image-bg {
+        position: absolute;
+        inset: -12px;
+        background: var(--meds-brand-light);
+        border-radius: var(--meds-radius-lg);
+        transform: rotate(-3deg);
+        z-index: 0;
+        transition: transform 0.3s ease;
+    }
+    .meds-doc:hover .meds-doc__image-bg {
+        transform: rotate(0deg);
+    }
+    .meds-doc--reverse .meds-doc__image-bg {
+        transform: rotate(3deg);
+    }
+    .meds-doc--reverse:hover .meds-doc__image-bg {
+        transform: rotate(0deg);
+    }
+
+    .meds-doc__image {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        border-radius: var(--meds-radius-md);
+        box-shadow: var(--meds-shadow-lg);
+    }
+
+    .meds-doc__content {
+        flex: 1;
+    }
+
+    .meds-doc__name {
+        font-family: var(--meds-font-heading);
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--meds-brand-dark);
+        margin: 0 0 8px 0;
+    }
+
+    .meds-doc__specialty {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--meds-accent);
+        margin: 0 0 24px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .meds-doc__text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--meds-text-secondary);
+    }
+    .meds-doc__text p {
+        margin: 0 0 16px 0;
+    }
+    .meds-doc__text p:last-child {
+        margin-bottom: 0;
+    }
+    .meds-doc__text strong {
+        color: var(--meds-text-primary);
+        font-weight: 600;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+        .meds-hero {
+            padding: 100px 20px 60px;
+        }
+        .meds-list {
+            padding: 60px 20px;
+        }
+        .meds-doc {
+            padding: 30px;
+            gap: 32px;
+        }
+        .meds-doc__name {
+            font-size: 28px;
+        }
+        .meds-doc__specialty {
+            font-size: 16px;
+        }
+    }
+</style>
