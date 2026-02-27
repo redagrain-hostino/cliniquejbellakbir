@@ -5,46 +5,49 @@
 <section class="intro-section" aria-label="Introduction">
     <div class="intro-container">
         <div class="intro-content">
-            <h2 class="intro-title">Gynécologie, obstétrique Tanger</h2>
-            <div class="intro-text">
-                <p>
-                    À Tanger, une équipe de médecins gynécologues obstétriciens
-                    hautement qualifiés s’est réunie au sein de la Clinique Jbel
-                    Lakbir, avec la volonté commune d’offrir une <b
-                        >prise en charge globale</b
-                    > et moderne de la santé de la femme.
-                </p>
-                <p>
-                    Cette équipe <b>réunit des spécialistes</b> couvrant l’ensemble
-                    des volets de la gynécologie médicale, qu’il s’agisse du suivi
-                    régulier, de la prévention, du dépistage ou du traitement des
-                    différentes pathologies féminines. L’approche repose sur l’écoute,
-                    la précision des diagnostics et la mise en œuvre de protocoles
-                    thérapeutiques actualisés selon les standards internationaux.
-                    La <strong>Clinique Jbel Lakbir</strong> met également l’accent
-                    sur une approche intégrée de la <strong>gynécologie</strong
-                    >, de l’<strong>obstétrique</strong> et de la <strong
-                        >fertilité</strong
-                    >, permettant d’assurer une continuité des soins à chaque
-                    étape de la vie de la femme.
-                </p>
-                <p>
-                    Contactez-nous dès maintenant au <b>+212 5399-49094</b> pour fixer
-                    votre rendez-vous.
-                </p>
+            <div class="intro-text-col">
+                <h2 class="intro-title">Gynécologie, obstétrique Tanger</h2>
+                <div class="intro-text">
+                    <p>
+                        À Tanger, une équipe de médecins gynécologues
+                        obstétriciens hautement qualifiés s'est réunie au sein
+                        de la Clinique Jbel Lakbir, avec la volonté commune
+                        d'offrir une <b>prise en charge globale</b> et moderne de
+                        la santé de la femme.
+                    </p>
+                    <p>
+                        Cette équipe <b>réunit des spécialistes</b> couvrant l'ensemble
+                        des volets de la gynécologie médicale, qu'il s'agisse du suivi
+                        régulier, de la prévention, du dépistage ou du traitement
+                        des différentes pathologies féminines. L'approche repose sur
+                        l'écoute, la précision des diagnostics et la mise en œuvre
+                        de protocoles thérapeutiques actualisés selon les standards
+                        internationaux. La <strong>Clinique Jbel Lakbir</strong> met
+                        également l'accent sur une approche intégrée de la <strong
+                            >gynécologie</strong
+                        >, de l'<strong>obstétrique</strong> et de la <strong
+                            >fertilité</strong
+                        >, permettant d'assurer une continuité des soins à
+                        chaque étape de la vie de la femme.
+                    </p>
+                    <p>
+                        Contactez-nous dès maintenant au <b>+212 5399-49094</b> pour
+                        fixer votre rendez-vous.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class="intro-image-wrapper">
-            <img
-                src="https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/11/clinique-gynecologue-tanger.png"
-                alt="Salle d'attente moderne et accueillante"
-                width="1024"
-                height="901"
-                loading="lazy"
-                decoding="async"
-                class="intro-image"
-            />
+            <div class="intro-images">
+                <img
+                    src="https://www.cliniquejbellakbir.ma/wp-content/uploads/2025/11/clinique-gynecologue-tanger.png"
+                    alt="Salle d'attente moderne et accueillante"
+                    width="1024"
+                    height="901"
+                    loading="lazy"
+                    decoding="async"
+                    class="intro-image"
+                />
+            </div>
         </div>
     </div>
 </section>
@@ -66,25 +69,26 @@
         width: 100%;
         margin: 0 auto;
         padding: 0 20px;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 40px;
     }
 
-    /* Left column - Content */
+    /* Main flex row: text left, image right */
     .intro-content {
-        flex: 1;
         display: flex;
-        flex-direction: column;
-        padding-right: 50px;
+        align-items: center;
+        gap: 60px;
+    }
+
+    /* Left column: text */
+    .intro-text-col {
+        flex: 1 1 400px;
+        min-width: 0;
     }
 
     .intro-title {
         font-family: var(--intro-font-heading);
         font-size: 51px;
         font-weight: 700;
-        line-height: 1.04; /* 53px / 51px */
+        line-height: 1.04;
         letter-spacing: 2.8px;
         color: var(--intro-title-color);
         margin-top: 0;
@@ -95,7 +99,6 @@
         font-size: 16px;
         color: var(--intro-text-color);
         line-height: 1.6;
-        padding-right: 20px;
     }
 
     .intro-text p {
@@ -107,9 +110,10 @@
         margin-bottom: 0;
     }
 
-    /* Right column - Image */
-    .intro-image-wrapper {
-        flex: 1;
+    /* Right column: image */
+    .intro-images {
+        flex: 1 1 380px;
+        min-width: 0;
         display: flex;
         justify-content: flex-end;
     }
@@ -122,55 +126,44 @@
         object-fit: cover;
     }
 
-    /* Responsive Adjustments */
+    /* Tablet: stack image below text */
     @media (max-width: 1024px) {
         .intro-section {
             padding: 100px 30px 80px;
         }
 
-        .intro-container {
-            padding: 0;
-            gap: 30px;
-        }
-
         .intro-content {
-            padding-right: 0;
-        }
-
-        .intro-title {
-            font-size: 50px;
-            line-height: 1.02;
-            letter-spacing: -2.4px;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .intro-section {
-            padding: 60px 25px 0;
-        }
-
-        .intro-container {
             flex-direction: column;
             gap: 40px;
         }
 
-        .intro-title {
-            font-size: 42px;
-            line-height: 1.05;
-            letter-spacing: -2px;
+        .intro-text-col {
+            flex: none;
+            width: 100%;
         }
 
-        .intro-text {
-            padding-right: 0;
-        }
-
-        .intro-image-wrapper {
+        .intro-images {
+            flex: none;
+            width: 100%;
             justify-content: center;
-            width: 100%;
         }
 
-        .intro-image {
-            width: 100%;
+        .intro-title {
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+        .intro-section {
+            padding: 60px 25px 40px;
+        }
+
+        .intro-title {
+            font-size: 36px;
+            line-height: 1.05;
+            letter-spacing: -1px;
         }
     }
 </style>

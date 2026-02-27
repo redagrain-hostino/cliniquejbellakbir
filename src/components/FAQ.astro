@@ -116,10 +116,10 @@ const faqs = [
     :root {
         --faq-bg: #f9fbfc;
         --faq-brand: #33a9b1;
-        --faq-title-color: #1a202c;
-        --faq-text-muted: #474e5a;
+        --faq-title-color: #022562;
+        --faq-text-muted: #00215a;
         --faq-font-heading: "Raleway", sans-serif;
-        --faq-font-body: "Poppins", sans-serif;
+        --faq-font-body: "Raleway", sans-serif;
     }
 
     .faq-section {
@@ -127,6 +127,7 @@ const faqs = [
         padding: 120px 0;
         position: relative;
         overflow: hidden;
+        font-family: var(--faq-font-body);
     }
 
     .faq-section::after {
@@ -241,10 +242,11 @@ const faqs = [
 
     .faq-question-text {
         font-family: var(--faq-font-body);
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 600;
         color: var(--faq-title-color);
         line-height: 1.5;
+        font-weight: 600;
         flex: 1;
     }
 
@@ -281,9 +283,10 @@ const faqs = [
     .faq-answer-inner {
         padding: 28px 24px;
         font-family: var(--faq-font-body);
-        font-size: 15px;
+        font-size: 16px;
         color: var(--faq-text-muted);
         line-height: 1.8;
+        font-weight: 500;
     }
 
     .faq-answer-inner a {

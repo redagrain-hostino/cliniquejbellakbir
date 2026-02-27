@@ -19,13 +19,13 @@
     :root {
         --hero-brand: #33a9b1;
         --hero-font-main: "Raleway", sans-serif;
-        --hero-font-btn: "Poppins", sans-serif;
+        --hero-font-btn: "Raleway", sans-serif;
     }
 
     .hero-section {
         position: relative;
         padding: 120px 0;
-        min-height: 70vh;
+        min-height: 60vh;
         display: flex;
         align-items: center;
         background-color: var(--hero-brand);
@@ -33,7 +33,6 @@
         overflow: hidden;
     }
 
-    /* Background image with overlay */
     .hero-bg {
         position: absolute;
         inset: 0;
@@ -43,18 +42,17 @@
         background-position: center;
     }
 
-    /* The actual color overlay over the image */
     .hero-bg::after {
         content: "";
         position: absolute;
         inset: 0;
         background-color: var(--hero-brand);
-        opacity: 0.7; 
+        opacity: 0.1;
     }
 
     .hero-container {
         position: relative;
-        z-index: 2; /* Above the background */
+        z-index: 2;
         max-width: 1400px;
         width: 100%;
         margin-inline: auto;
@@ -104,7 +102,6 @@
         font-weight: 600;
         text-decoration: none;
         border-radius: 7px;
-        border: 2px solid #ffffff; /* Add white border to make it pop against the teal background */
         transition:
             background-color 0.25s ease,
             color 0.25s ease,
@@ -121,7 +118,6 @@
         transform: translateY(0);
     }
 
-    /* Responsive Adjustments */
     @media (max-width: 1024px) {
         .hero-section {
             padding: 100px 0;
