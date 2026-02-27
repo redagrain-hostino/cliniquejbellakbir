@@ -1,0 +1,413 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactSection from "../components/ContactSection.astro";
+
+const specialites = [
+    {
+        name: "Gynécologie",
+        link: "/gynecologie",
+        image: "/gynecologie-tanger.jpg",
+        description:
+            "Toutes les problématiques que peut rencontrer une femme au cours de sa vie trouvent des réponses auprès de nos spécialistes.",
+    },
+    {
+        name: "Obstétrique",
+        link: "/obstetrique",
+        image: "/obstetrique-tanger.jpg",
+        description:
+            "Accompagnement complet tout au long de la grossesse, de la conception à l'accouchement, dans un cadre attentif et rassurant.",
+    },
+    {
+        name: "Cancérologie",
+        link: "/cancerologie",
+        image: "/cancerologie-tanger.jpg",
+        description:
+            "Service spécialisé dans la prévention, le diagnostic et le traitement des cancers féminins avec l'accès aux derniers traitements.",
+    },
+    {
+        name: "Chirurgie",
+        link: "/chirurgie",
+        image: "/chirurgie-gynecologue-tanger.jpg",
+        description:
+            "Un service dédié aux interventions chirurgicales féminines, avec des techniques de pointe modernes et sécurisées.",
+    },
+];
+---
+
+<Layout title="Nos Spécialités | Clinique Jbel Lakbir">
+    <main class="spec-page">
+        <!-- Hero Section -->
+        <section class="spec-hero">
+            <div class="spec-hero__bg-glow spec-hero__bg-glow--right"></div>
+            <div class="spec-hero__bg-glow spec-hero__bg-glow--left"></div>
+
+            <div class="spec-hero__inner">
+                <div class="spec-hero__badge">
+                    <span class="spec-hero__badge-dot"></span>
+                    Nos Pôles d'Excellence
+                </div>
+
+                <h1 class="spec-hero__title">
+                    Nos <span class="spec-hero__title-accent">Spécialités</span>
+                </h1>
+
+                <p class="spec-hero__subtitle">
+                    Découvrez l'ensemble des spécialités proposées par la
+                    Clinique Jbel Lakbir pour un suivi complet et personnalisé
+                    de la santé de la femme.
+                </p>
+
+                <div class="spec-hero__cta-wrap">
+                    <a href="/contact" class="spec-hero__cta">
+                        <span>Prendre rendez-vous</span>
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+                        >
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialties Grid Section -->
+        <section class="spec-grid-section">
+            <div class="spec-grid-section__inner">
+                <div class="spec-grid">
+                    {
+                        specialites.map((spec) => (
+                            <a href={spec.link} class="spec-card">
+                                <div class="spec-card__body">
+                                    <div class="spec-card__avatar">
+                                        <img
+                                            src={spec.image}
+                                            alt={spec.name}
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <h3 class="spec-card__name">{spec.name}</h3>
+                                    <p class="spec-card__text">
+                                        {spec.description}
+                                    </p>
+                                </div>
+                                <div class="spec-card__footer">
+                                    <span>Découvrir ce service</span>
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                        />
+                                    </svg>
+                                </div>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <ContactSection />
+    </main>
+</Layout>
+
+<style>
+    /* ========================================
+       VARIABLES & TOKENS
+       ======================================== */
+    :root {
+        --spec-brand: #009b9f;
+        --spec-brand-dark: #007679;
+        --spec-accent: #c4a173; /* Using a clean, muted accent or gold if desired */
+
+        --spec-text-primary: #1e293b;
+        --spec-text-secondary: #475569;
+        --spec-white: #ffffff;
+        --spec-bg-alt: #f8fafc;
+        --spec-border: #e2e8f0;
+
+        --spec-radius-sm: 8px;
+        --spec-radius-md: 16px;
+        --spec-radius-lg: 24px;
+        --spec-radius-full: 9999px;
+
+        --spec-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        --spec-shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.05);
+        --spec-shadow-lg: 0 20px 40px -5px rgba(0, 155, 159, 0.1);
+        --spec-shadow-hover: 0 25px 50px -12px rgba(0, 155, 159, 0.25);
+
+        --spec-font-heading: "Playfair Display", "Georgia", serif;
+        --spec-font-body: "Inter", "system-ui", sans-serif;
+    }
+
+    /* ========================================
+       GLOBAL
+       ======================================== */
+    .spec-page {
+        font-family: var(--spec-font-body);
+        color: var(--spec-text-primary);
+        line-height: 1.6;
+        background-color: var(--spec-white);
+        overflow-x: hidden;
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+    .spec-hero {
+        position: relative;
+        padding: 120px 24px 80px;
+        background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            var(--spec-brand-dark) 100%
+        );
+        color: var(--spec-white);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .spec-hero__bg-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .spec-hero__bg-glow--right {
+        top: -200px;
+        right: -200px;
+        background: var(--spec-brand);
+    }
+    .spec-hero__bg-glow--left {
+        bottom: -200px;
+        left: -200px;
+        background: var(--spec-white);
+    }
+
+    .spec-hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .spec-hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        padding: 8px 16px;
+        border-radius: var(--spec-radius-full);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .spec-hero__badge-dot {
+        width: 8px;
+        height: 8px;
+        background: #10b981;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #10b981;
+    }
+
+    .spec-hero__title {
+        font-family: var(--spec-font-heading);
+        font-size: clamp(40px, 6vw, 64px);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 24px 0;
+        color: var(--spec-white);
+    }
+    .spec-hero__title-accent {
+        font-style: italic;
+    }
+
+    .spec-hero__subtitle {
+        font-size: clamp(16px, 2vw, 20px);
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 0 40px 0;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    .spec-hero__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--spec-white);
+        color: var(--spec-brand-dark);
+        padding: 16px 32px;
+        border-radius: var(--spec-radius-full);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--spec-shadow-md);
+    }
+    .spec-hero__cta:hover {
+        transform: translateY(-2px);
+        background: #e2e8f0;
+        color: var(--spec-brand-dark);
+        box-shadow: var(--spec-shadow-lg);
+    }
+
+    /* ========================================
+       GRID SECTION
+       ======================================== */
+    .spec-grid-section {
+        padding: 100px 24px;
+        background-color: var(--spec-bg-alt);
+    }
+
+    .spec-grid-section__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .spec-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+        .spec-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+    }
+
+    .spec-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--spec-white);
+        border: 1px solid var(--spec-border);
+        border-radius: var(--spec-radius-lg);
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        height: 100%;
+        box-shadow: var(--spec-shadow-sm);
+    }
+    .spec-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--spec-shadow-hover);
+        border-color: rgba(0, 155, 159, 0.2);
+    }
+
+    .spec-card__body {
+        padding: 32px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .spec-card__avatar {
+        width: 100%;
+        max-width: 250px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 24px;
+        border: 8px solid var(--spec-bg-alt);
+        box-shadow: var(--spec-shadow-sm);
+        transition: transform 0.5s ease;
+    }
+    .spec-card:hover .spec-card__avatar {
+        transform: scale(1.05);
+    }
+
+    .spec-card__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .spec-card__name {
+        font-family: var(--spec-font-heading);
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--spec-brand-dark);
+        margin: 0 0 16px 0;
+        transition: color 0.3s ease;
+    }
+    .spec-card:hover .spec-card__name {
+        color: var(--spec-brand);
+    }
+
+    .spec-card__text {
+        font-size: 16px;
+        color: var(--spec-text-secondary);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .spec-card__footer {
+        padding: 24px 32px;
+        background: var(--spec-bg-alt);
+        border-top: 1px solid var(--spec-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--spec-brand);
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .spec-card:hover .spec-card__footer {
+        background: var(--spec-brand);
+        color: var(--spec-white);
+    }
+
+    .spec-card__footer svg {
+        transition: transform 0.3s ease;
+    }
+    .spec-card:hover .spec-card__footer svg {
+        transform: translateX(4px);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+        .spec-hero {
+            padding: 100px 20px 60px;
+        }
+        .spec-grid-section {
+            padding: 60px 20px;
+        }
+        .spec-grid {
+            gap: 24px;
+        }
+        .spec-card__body {
+            padding: 24px;
+        }
+    }
+</style>
